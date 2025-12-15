@@ -15,12 +15,22 @@
     font-weight: bold;
     padding-right: @component-padding;
     font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
 
     &.tool-toggle {
       cursor: pointer;
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    // Icons in tool names
+    [class^="icon-"], [class*=" icon-"] {
+      font-size: 0.9em;
+      opacity: 0.8;
     }
   }
 
@@ -57,7 +67,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 300px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tool-output-info {
+    opacity: 0.5;
+    font-size: 0.8em;
+    flex-shrink: 0;
   }
 
   .tool-pattern {
@@ -97,22 +114,71 @@
   }
 
   .tool-result-error {
+    margin-top: @component-padding;
+    white-space: pre-wrap;
     border-left-color: @text-color-error;
     background: fade(@text-color-error, 10%);
   }
 
-  // Bash full command display
-  .tool-bash-command {
+  // Bash content container
+  .tool-bash-content {
     margin-top: @component-padding;
-    padding: @component-padding / 2;
-    background: @input-background-color;
-    border: 1px solid @tool-panel-border-color;
     border-radius: 5px;
+    overflow: hidden;
+    background: darken(@input-background-color, 3%);
+    border: 1px solid @tool-panel-border-color;
+  }
+
+  // Command section
+  .bash-command-section {
+    padding: @component-padding / 2 @component-padding;
+    background: @input-background-color;
+    border-bottom: 1px solid @tool-panel-border-color;
+  }
+
+  .bash-command-text {
+    margin: 0;
     font-family: var(--editor-font-family);
+    font-size: 0.9em;
     white-space: pre-wrap;
     word-break: break-all;
-    max-height: 200px;
+  }
+
+  // Output section
+  .bash-output-section {
+    max-height: 300px;
     overflow-y: auto;
+  }
+
+  .bash-output-text {
+    margin: 0;
+    padding: @component-padding / 2 @component-padding;
+    font-family: var(--editor-font-family);
+    font-size: 0.85em;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: @text-color-subtle;
+    line-height: 1.4;
+  }
+
+  // Error output styling
+  .bash-output-error {
+    background: fade(@text-color-error, 8%);
+
+    .bash-output-text {
+      color: @text-color-error;
+    }
+  }
+
+  // Error state for entire bash block
+  &.bash-error {
+    .tool-name {
+      color: @text-color-error;
+    }
+
+    .bash-command-section {
+      border-left: 2px solid @text-color-error;
+    }
   }
 
   // Expandable content
