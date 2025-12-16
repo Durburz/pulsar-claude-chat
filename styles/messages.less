@@ -176,10 +176,6 @@
 .timeline-item {
   position: relative;
   padding-bottom: @component-padding / 2;
-
-  &.timeline-last {
-    padding-bottom: 0;
-  }
 }
 
 // Timeline dot - aligned with first line of text
@@ -215,9 +211,10 @@
 .timeline-line {
   position: absolute;
   left: -7px;
-  top: @component-padding + 10px + 3px; // Below 8px dot
+  top: @component-padding + 10px + 3px; // Below 6px dot
   // Extend into next item to reach the next dot
-  bottom: -(@component-padding / 2 + @component-padding + 2px);
+  // Next dot is at: @component-padding + 5px + 3px = 18px from item top
+  bottom: -(@component-padding / 2 + @component-padding + 3px);
   width: 2px;
   background: fade(@text-color-subtle, 30%);
   z-index: 1;
@@ -225,13 +222,14 @@
 
 // For last item that connects to next sequence (extends across sequence gap)
 .timeline-item:last-child:not(.timeline-last) .timeline-line {
-  // Extend further to reach streaming sequence's dot
-  bottom: -(@component-padding + @component-padding + 2px);
+  // Extend to reach streaming sequence's dot across sequence margin
+  // Gap = sequence margin (@component-padding) + next dot position (@component-padding + 5px + 3px)
+  bottom: -(@component-padding + @component-padding + 5px + 3px);
 }
 
 // For the final item - line extends to bottom of message content
 .timeline-item.timeline-last .timeline-line {
-  bottom: @component-padding;
+  display: none;
 }
 
 // Timeline content wrapper
@@ -315,25 +313,6 @@
   }
 }
 
-// Permission request
-.permission-request {
-  background: @background-color-warning;
-  padding: @component-padding;
-  border-radius: @component-border-radius;
-  display: flex;
-  align-items: center;
-  gap: @component-padding;
-  margin-bottom: @component-padding;
-
-  .permission-text {
-    flex: 1;
-  }
-
-  .btn {
-    margin: 0;
-  }
-}
-
 // Thinking block styles
 .thinking-block {
   background: fade(@background-color-info, 15%);
@@ -341,6 +320,12 @@
   border-radius: @component-border-radius;
   margin-bottom: @component-padding;
   font-size: 0.9em;
+
+  // Pull up when first child to align with timeline dot
+  // Compensates for thinking-header's 6px top padding
+  .message-assistant > &:first-child {
+    margin-top: -4px;
+  }
 
   .thinking-header {
     display: flex;
