@@ -17,7 +17,7 @@
   "dependencies": {
     "@mathjax/src": "^4.0.0",
     "etch": "^0.14.1",
-    "pulsar-select-list": "^1.0.2"
+    "pulsar-select-list": "^1.2.0"
   },
   "deserializers": {
     "claude-chat/ChatPanel": "deserializeChatPanel"
