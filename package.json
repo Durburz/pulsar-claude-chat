@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@mathjax/src": "^4.0.0",
-    "@modelcontextprotocol/sdk": "^1.0.0",
     "etch": "^0.14.1",
     "pulsar-select-list": "^1.2.0"
   },
