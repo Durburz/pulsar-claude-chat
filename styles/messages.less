@@ -421,6 +421,12 @@
   }
 }
 
+// Welcome page animations
+@keyframes titleShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 // Welcome page styles
 .welcome-page {
   display: flex;
@@ -439,7 +445,19 @@
   font-size: 1.8em;
   font-weight: 600;
   margin: 0 0 @component-padding / 2;
-  color: @text-color-highlight;
+  background: linear-gradient(
+    90deg,
+    @text-color-highlight 0%,
+    @text-color-highlight 40%,
+    @text-color-info 50%,
+    @text-color-highlight 60%,
+    @text-color-highlight 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleShimmer 6s ease-in-out infinite;
 }
 
 .welcome-subtitle {
@@ -464,13 +482,17 @@
 
   ul {
     margin: 0;
-    padding-left: 1.2em;
+    padding-left: 0;
+    list-style: none;
     font-size: 0.9em;
     opacity: 0.8;
   }
 
   li {
     margin-bottom: 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
   }
 
   kbd {
@@ -480,5 +502,19 @@
     padding: 1px 5px;
     font-size: 0.85em;
     font-family: var(--editor-font-family);
+    flex-shrink: 0;
+    min-width: 90px;
+    text-align: center;
+  }
+
+  &.tip-section-list {
+    ul {
+      padding-left: 1.2em;
+      list-style: disc;
+    }
+
+    li {
+      display: list-item;
+    }
   }
 }
