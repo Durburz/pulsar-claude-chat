@@ -127,4 +127,107 @@
       }
     }
   }
+
+  // Selection tools styling
+  .tool-setselections,
+  .tool-getallselections {
+    .tool-name {
+      margin-right: @component-padding / 2;
+
+      &::before {
+        content: "Pulsar/";
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .mcp-selection-text {
+    font-family: var(--editor-font-family);
+    font-size: 0.85em;
+    color: @text-color-subtle;
+    background-color: fade(@syntax-text-color, 10%);
+    padding: 1px 4px;
+    border-radius: @component-border-radius / 2;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mcp-empty {
+    opacity: 0.7;
+  }
+
+  // Tree view reveal
+  .tool-revealintreeview {
+    .tool-name {
+      margin-right: @component-padding / 2;
+
+      &::before {
+        content: "Pulsar/";
+        opacity: 0.5;
+      }
+    }
+  }
+
+  // Close file tool
+  .tool-closefile {
+    .tool-name {
+      margin-right: @component-padding / 2;
+
+      &::before {
+        content: "Pulsar/";
+        opacity: 0.5;
+      }
+    }
+
+    .tool-result-info {
+      color: @text-color-subtle;
+    }
+  }
+
+  // Pane tools
+  .tool-splitpane,
+  .tool-closepane {
+    .tool-name {
+      margin-right: @component-padding / 2;
+
+      &::before {
+        content: "Pulsar/";
+        opacity: 0.5;
+      }
+    }
+  }
+
+  // Panel state view
+  .tool-getpanelstate {
+    .tool-name {
+      margin-right: @component-padding / 2;
+
+      &::before {
+        content: "Pulsar/";
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .mcp-panel-state {
+    .mcp-info-row {
+      padding: @component-padding / 4 0;
+    }
+
+    .mcp-label {
+      min-width: 80px;
+    }
+  }
+
+  .mcp-visible {
+    background-color: fade(@text-color-success, 20%);
+    color: @text-color-success;
+  }
+
+  .mcp-hidden {
+    background-color: fade(@text-color-subtle, 15%);
+    color: @text-color-subtle;
+  }
 }

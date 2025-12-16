@@ -100,6 +100,13 @@
       "description": "Enable extended thinking mode to see Claude's reasoning process",
       "type": "boolean",
       "default": false,
+      "order": 4
+    },
+    "pulsarMCP": {
+      "title": "Pulsar MCP Server",
+      "description": "Enable Pulsar MCP server to give Claude direct access to editor features (selections, panes, tree view, etc.)",
+      "type": "boolean",
+      "default": true,
       "order": 5
     },
     "mcpBridgePort": {
