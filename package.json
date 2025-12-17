@@ -24,9 +24,18 @@
   },
   "activationCommands": {
     "atom-workspace": [
+      "claude-chat:open",
       "claude-chat:toggle",
       "claude-chat:new-chat",
-      "claude-chat:history"
+      "claude-chat:settings",
+      "claude-chat:history",
+      "claude-chat:clear-history"
+    ],
+    "atom-text-editor:not([mini])": [
+      "claude-chat:attach"
+    ],
+    ".tree-view": [
+      "claude-chat:attach"
     ]
   },
   "providedServices": {

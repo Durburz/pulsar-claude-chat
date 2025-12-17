@@ -44,13 +44,15 @@ Send a prompt to Claude programmatically.
 // Simple prompt
 await service.sendPrompt("Explain this code");
 
-// With attach context
+// With attach context (supports multi-cursor selections)
 await service.sendPrompt("Review this selection", {
   attachContext: {
-    type: "selection",
-    paths: ["src/app.js"],
+    type: "selections",
+    path: "src/app.js",
     line: 42,
-    selection: "const foo = bar()",
+    selections: [
+      { text: "const foo = bar()", range: { start: { row: 41, column: 0 }, end: { row: 41, column: 18 } } }
+    ],
     label: "src/app.js:42",
     icon: "code"
   }
@@ -81,8 +83,7 @@ service.setAttachContext({
 
 **Context types:**
 - `paths` - File or directory paths
-- `selection` - Code selection with `paths`, `line`, `selection`
-- `position` - Cursor position with `paths`, `line`, `column`
+- `selections` - Selections/cursors with `path`, `line`, `selections` array (empty text = cursor position)
 - `image` - Image file with optional region selection
 
 #### `clearAttachContext()`
@@ -116,7 +117,7 @@ disposable.dispose();
 
 ## MCP Server
 
-The package includes a built-in MCP (Model Context Protocol) server that allows AI assistants to programmatically control the Pulsar editor. The server starts automatically when claude-chat is activated and implements the [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18).
+The package includes a built-in MCP (Model Context Protocol) server that allows AI assistants to programmatically control the Pulsar editor. The server can be enabled/disabled in package settings (`pulsarMCP`, enabled by default) and implements the [MCP specification](https://modelcontextprotocol.io).
 
 ### Configuration
 
@@ -133,7 +134,13 @@ For MCP clients (Claude Desktop, Claude Code, etc.), add this to your MCP config
 }
 ```
 
-The port can be configured in package settings (`mcpBridgePort`). Default is `3000`.
+### Port Handling
+
+The base port can be configured in package settings (`mcpBridgePort`). Default is `3000`.
+
+**Automatic port discovery:** If the base port is in use (by another Pulsar window or external application), the server automatically finds the next available port (3001, 3002, etc.).
+
+External MCP clients configured with port `3000` will only control the window currently using that port. For the built-in claude-chat panel, this is handled automatically since it communicates with its own window's server.
 
 ### Available Tools
 
