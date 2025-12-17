@@ -25,6 +25,7 @@
   "activationCommands": {
     "atom-workspace": [
       "claude-chat:open",
+      "claude-chat:open-latest",
       "claude-chat:toggle",
       "claude-chat:new-chat",
       "claude-chat:settings",

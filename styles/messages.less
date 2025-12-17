@@ -22,22 +22,21 @@
 
     // Markdown styles
     pre {
-      background: @input-background-color;
+      background: fade(@background-color-highlight, 50%);
+      border: 1px solid @tool-panel-border-color;
+      border-radius: 5px;
       padding: @component-padding;
-      border-radius: @component-border-radius;
-      border-left: 2px solid @text-color-subtle;
-      overflow-x: auto;
       margin: @component-padding 0;
+      overflow-x: auto;
       font-family: var(--editor-font-family);
       font-size: 0.9em;
       line-height: 1.5;
     }
 
     code {
-      padding: 1px 1px;
+      padding: 2px 2px;
       border-radius: 3px;
       font-family: var(--editor-font-family);
-      font-size: 0.9em;
     }
 
     pre code {
@@ -48,15 +47,28 @@
 
     // Markdown table styles
     table {
-      border-collapse: collapse;
+      border-collapse: separate;
+      border-spacing: 0;
       margin: @component-padding 0;
       font-size: 0.9em;
+      border: 1px solid @tool-panel-border-color;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
     th, td {
       padding: 6px 10px;
-      border: 1px solid @base-border-color;
+      border-bottom: 1px solid @tool-panel-border-color;
+      border-right: 1px solid @tool-panel-border-color;
       text-align: left;
+    }
+
+    th:last-child, td:last-child {
+      border-right: none;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     th {
