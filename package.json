@@ -117,6 +117,13 @@
       "minimum": 1024,
       "maximum": 65535,
       "order": 6
+    },
+    "debugMode": {
+      "title": "Debug Mode",
+      "description": "Enable debug logging to console for troubleshooting",
+      "type": "boolean",
+      "default": false,
+      "order": 99
     }
   }
 }
