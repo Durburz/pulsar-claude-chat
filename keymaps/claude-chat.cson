@@ -5,7 +5,6 @@
   'enter': 'claude-chat:send'
   'shift-enter': 'editor:newline'
   'escape': 'claude-chat:clear'
-  'ctrl-0': 'claude-chat:toggle-thinking'
   'ctrl-1': 'claude-chat:mode-default'
   'ctrl-2': 'claude-chat:mode-plan'
   'ctrl-3': 'claude-chat:mode-accept-edits'

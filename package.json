@@ -103,13 +103,6 @@
       ],
       "order": 3
     },
-    "thinkingMode": {
-      "title": "Extended Thinking",
-      "description": "Enable extended thinking mode to see Claude's reasoning process",
-      "type": "boolean",
-      "default": false,
-      "order": 4
-    },
     "pulsarMCP": {
       "title": "Pulsar MCP Server",
       "description": "Enable Pulsar MCP server to give Claude direct access to editor features (selections, panes, tree view, etc.)",
