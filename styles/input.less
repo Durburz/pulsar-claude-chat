@@ -80,3 +80,54 @@
     margin-right: 8px;
   }
 }
+
+// Permission prompt UI
+.permission-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: @component-padding;
+  margin: @component-padding 0;
+  background: fade(@background-color-warning, 15%);
+  border: 1px solid fade(@background-color-warning, 40%);
+  border-radius: @component-border-radius;
+  gap: @component-padding;
+
+  .permission-prompt-content {
+    display: flex;
+    align-items: center;
+    gap: @component-padding / 2;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .permission-prompt-icon {
+    font-size: 1.2em;
+    color: @text-color-warning;
+    flex-shrink: 0;
+  }
+
+  .permission-prompt-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    strong {
+      color: @text-color-highlight;
+    }
+  }
+
+  .permission-prompt-details {
+    font-size: 0.85em;
+    color: @text-color-subtle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .permission-prompt-actions {
+    display: flex;
+    gap: @component-padding / 2;
+    flex-shrink: 0;
+  }
+}
