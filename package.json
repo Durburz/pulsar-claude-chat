@@ -46,6 +46,13 @@
       }
     }
   },
+  "consumedServices": {
+    "mcp-tools": {
+      "versions": {
+        "^1.0.0": "consumeMcpTools"
+      }
+    }
+  },
   "configSchema": {
     "claudePath": {
       "title": "Claude CLI Path",
