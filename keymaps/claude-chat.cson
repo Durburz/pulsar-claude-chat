@@ -11,6 +11,7 @@
   'ctrl-2': 'claude-chat:mode-plan'
   'ctrl-3': 'claude-chat:mode-accept-edits'
   'ctrl-4': 'claude-chat:mode-bypass'
+  'alt-c': 'claude-chat:focus-active-editor'
 
 '.claude-chat-history atom-text-editor':
   'ctrl-enter': 'claude-chat:open-keep-list'
