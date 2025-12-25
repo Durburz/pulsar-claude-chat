@@ -1,5 +1,6 @@
 'atom-workspace':
   'alt-c': 'claude-chat:open'
+  'alt-shift-c': 'claude-chat:history'
 
 '.claude-chat atom-text-editor':
   'enter': 'claude-chat:send'

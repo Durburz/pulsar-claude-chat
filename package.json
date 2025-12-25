@@ -19,9 +19,6 @@
     "etch": "^0.14.1",
     "pulsar-select-list": "^1.2.0"
   },
-  "deserializers": {
-    "claude-chat/ChatPanel": "deserializeChatPanel"
-  },
   "activationCommands": {
     "atom-workspace": [
       "claude-chat:open",
@@ -38,7 +35,7 @@
     ".tree-view": [
       "tree-view:attach-to-claude"
     ]
-  },
+  },  
   "providedServices": {
     "claude-chat": {
       "versions": {
