@@ -10,7 +10,7 @@ Interactive chat panel for [Claude Code](https://github.com/anthropics/claude-co
 - Context extender methods.
 - Extended thinking toggle.
 - Permission modes switch.
-- MCP tools integration via [pulsar-mcp](https://github.com/asiloisad/pulsar-mcp).
+- Auto integration with [pulsar-mcp](https://github.com/asiloisad/pulsar-mcp).
 
 ## Installation
 
