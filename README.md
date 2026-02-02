@@ -2,6 +2,8 @@
 
 Interactive chat panel for [Claude Code](https://github.com/anthropics/claude-code). Provides a conversational interface with streaming responses, markdown rendering, and session management.
 
+![panel](https://github.com/asiloisad/pulsar-claude-chat/blob/master/assets/panel.png?raw=true)
+
 ## Features
 
 - **Streaming responses**: Real-time text display as Claude responds.
