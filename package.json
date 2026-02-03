@@ -48,6 +48,11 @@
       "versions": {
         "^1.0.0": "consumePulsarMcp"
       }
+    },
+    "tree-view": {
+      "versions": {
+        "^1.0.0": "consumeTreeView"
+      }
     }
   },
   "configSchema": {
