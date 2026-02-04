@@ -78,7 +78,8 @@
         "default",
         "sonnet",
         "opus",
-        "haiku"
+        "haiku",
+        "custom"
       ],
       "order": 2
     },
@@ -106,6 +107,20 @@
         }
       ],
       "order": 3
+    },
+    "ollamaAddress": {
+      "title": "Ollama Address",
+      "description": "For custom models in Claude Code provided by a Ollama Instance",
+      "type": "string",
+      "default": "",
+      "order": 4
+    },
+    "customModel": {
+      "title": "Custom Model",
+      "description": "Use a custom model name",
+      "type": "string",
+      "default": "",
+      "order": 5
     },
     "debugMode": {
       "title": "Debug Mode",

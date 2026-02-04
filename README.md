@@ -13,6 +13,7 @@ Interactive chat panel for [Claude Code](https://github.com/anthropics/claude-co
 - **Context extender**: Attach selections, files, or images to prompts.
 - **Permission modes**: Switch between permission levels.
 - **MCP integration**: Auto-connects with [pulsar-mcp](https://github.com/asiloisad/pulsar-mcp).
+- **Ollama integration**: Allows the use of Ollama as AI Backend in Claude Code.
 
 ## Installation
 
@@ -21,6 +22,10 @@ To install `claude-chat` search for [claude-chat](https://web.pulsar-edit.dev/pa
 ## Chat history
 
 Chat sessions are stored in `~/.pulsar/claude-chat-sessions/` directory. Each session is saved as a JSON file containing messages, timestamps, project paths, and token usage.
+
+## Ollama Backend
+
+You can configure a Ollama instance as a Backend by providing the Address like `http://localhost:11434` for local deployments. Additionally you'll have to set a custom model name like `qwen3-coder`.
 
 ## Service
 
